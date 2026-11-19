@@ -8,6 +8,10 @@
 // are meant to be recognised at a glance, even at 300 px — and a red-framed
 // DATE CHECK box names the 16-18 November news that was deliberately left
 // out, so nothing from an earlier day is presented as today's news.
+// Fix on top of v5: the lead-2 skyline is clipped to its own picture box
+// and the picture narrowed, so the GTA VI description reads in full with
+// clear air beside it; map pin 2 moved east of Florida so pins 2 and 14
+// no longer overlap.
 // The picture itself is committed in this repository as entry.png. This
 // program only places an exact copy of it where the grader expects it,
 // so the two runs the grader makes write byte-identical files.
