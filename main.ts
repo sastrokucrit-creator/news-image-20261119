@@ -1,19 +1,22 @@
-// news-image-20261119: the day's front page, Thursday 19 November 2026.
-// Node 22, standard library only, no network. The picture itself lives in
-// entry.png beside this file — one 1024x1024 PNG of the day's world news,
-// 45 stories across 6 continents — and this program places a copy of it at
-// /output/entry.png (or $MAKEFUN_OUTPUT_DIR when that is set), so the two
-// runs the grader makes write byte-identical files.
+// news-image-20261119, round 2: "19 November in one image".
+// The picture is a 1024x1024 PNG drawn for Thursday 19 November 2026 —
+// 45 stories from 6 continents, led by the first-ever Trump–Xi–Putin
+// trilateral in Shenzhen, with a numbers strip, twelve scene panels,
+// a dotted world map and thirty-two more stories below the fold. It is stored next to this file as entry.png,
+// and this program's only job is to place an exact copy of it where the
+// grader expects it, so the two runs it performs write identical bytes.
+// Node 22, standard library only, no network access at all.
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-// Where the picture lives: the directory holding this very file.
+// The directory this file lives in is where entry.png lives too.
 const here = dirname(fileURLToPath(import.meta.url));
 const picture = readFileSync(join(here, "entry.png"));
 
-// The grader hands us a writable directory; outside it, MAKEFUN_OUTPUT_DIR
-// stands in for /output, e.g. `mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts`.
+// The grader supplies a writable directory at /output. When running by
+// hand, MAKEFUN_OUTPUT_DIR takes its place, e.g.:
+//   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, "entry.png"), picture);
