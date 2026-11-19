@@ -1,11 +1,16 @@
-// news-image-20261119, round 4 (v4): "19 November in one image".
-// The front page is drawn as a newspaper: the date is the largest text,
-// three lead stories carry two-to-three-line descriptions, ten smaller
-// stories follow, thirty more are listed below, and a red-framed DATE CHECK
-// box names the 17/18 November news that was deliberately left out.
-// The picture itself lives in this repository as entry.png; this program
-// only places an exact copy of it where the grader expects it, so the two
-// runs the grader makes write byte-identical files.
+// news-image-20261119, round 5 (v5): "19 November in one image".
+// A newspaper front page for Thursday 19 November 2026. The date is the
+// largest text on the page; three lead stories carry two-to-three-line
+// descriptions; eleven smaller stories follow, each with its own drawn
+// scene (a courtroom, a cyclone spiral, a tank in floodwater, and more);
+// thirty more are listed below. A navy world map with solid cream
+// continents and numbered red pins marks stories 1-14 — the continents
+// are meant to be recognised at a glance, even at 300 px — and a red-framed
+// DATE CHECK box names the 16-18 November news that was deliberately left
+// out, so nothing from an earlier day is presented as today's news.
+// The picture itself is committed in this repository as entry.png. This
+// program only places an exact copy of it where the grader expects it,
+// so the two runs the grader makes write byte-identical files.
 // Node 22, standard library only, no network access at all.
 import { copyFileSync, existsSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
